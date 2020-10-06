@@ -1,27 +1,23 @@
-<!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <title>Cássio's</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
+ 
     <body>
         <div>
             <h1><a href="/">Cássio Iribarrem Bernardes</a></h1>
         </div>
 
-        <div>
-            <p>publicado: 05/10/2020</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Testes sendo feitos para a construção do blog.</p>
-        		{% for post in posts %}
-        	<div>
-        			<p>published: {{post.published.date}}</p>
-        			<h2><a href="">{{post.title}}</a></h2>
-        			<p>{{post.text|linebreaksbr}}</p>
-      		</div>
-        	{% endfor %}
-            <p>publicado: 05/10/2020</p>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p>Teste número 2.</p>
-        </div>
+        {% for post in posts %}	
+       		<div>
+       			<p>published: {{post.published.date}}</p>
+       			<h2><a href="">{{post.title}}</a></h2>
+       			<p>{{post.text|linebreaksbr}}</p>
+   			</div>
+       	{% endfor %}
     </body>
 </html>
